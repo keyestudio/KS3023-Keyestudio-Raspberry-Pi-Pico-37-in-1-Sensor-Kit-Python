@@ -149,7 +149,7 @@ https://www.raspberrypi.com/products/raspberry-pi-pico/
 
 
 
-### 3.1 MicroPython IDE-----Thonny
+3.1 MicroPython IDE-----Thonny
 
 Programming the Pico: You could use **C/C++** or **MicroPython**. 
 
@@ -159,7 +159,7 @@ In this tutorial, we will use Thonny recommended by Raspberry Pi. Thonny bills i
 
 Boot and Install MicroPython: The first thing that we need to do is to get MicroPython installed onto the Pico.
 
-#### Download and Burn Firmware
+Download and Burn Firmware
 
 Go to the official website to download the UF2 file:
 
@@ -177,7 +177,7 @@ Move the UF2 file into “**RPI-RP2**”, and the Raspberry Pi Pico will automat
 
 ![image-20230424081145964](media/image-20230424081145964.png)
 
-#### Download and Install Thonny IDE
+Download and Install Thonny IDE
 
 Enter the official website to download Thonny, we should download the latest version for Windows.
 
@@ -219,7 +219,7 @@ The Raspberry Pi Pico interpreter is only available in the latest version of Tho
 
 ![image-20230424081348796](media/image-20230424081348796.png)
 
-### 3.2 Install Drivers
+3.2 Install Drivers
 
 Wire the Pi Pico board with the USB port of a computer via a MicroUSB. If the Pi Pico shield has installed MicroPython, and installed“Board CDC ” on the computer, then it will shows corresponding ports of “Pi Pico Serial Port（COM)” on Device Manager. If you have a Raspberry Pi, you can connect the Pico to the Raspberry Pi directly. The Raspberry Pi has a lot of built-in software that can be used directly. If wire the Pico with the computer, please follow the steps below.
 
@@ -241,7 +241,7 @@ Press“Enter”, if the on-board LED lights up, it means that Thonny works.
 
 ![image-20230424081522611](media/image-20230424081522611.png)
 
-### 3.3 Thonny User Interface
+3.3 Thonny User Interface
 
 After installing the IDE and the driver, now we will introduce Thonny user interface. At the top is the main menu, there are “File”, “Edit”, “View”, “Run”, “Tools” and “Help”.
 
@@ -297,7 +297,7 @@ Click “File”, then click“Save as...”to choose Raspberry Pi Pico. After t
 
 When we unplug the cable again, then plug it in and power on, the LED will blink. This is because the Raspberry Pi Pico starts running the program saved on main.py after powering up.
 
-### 3.4 Add Modules
+3.4 Add Modules
 
 Python is a powerful language due to its modules. Python scripting language with the most rich and powerful class library, enough to support the vast majority of day-to-day applications. By importing modules, this makes it easier for us when using some complex sensors.
 
@@ -313,9 +313,9 @@ When using sensors, we can import the corresponding modules directly.
 
 ![image-20230424081951439](media/image-20230424081951439.png)
 
-### 3.5 Keyestudio Raspberry Pico IO Shield
+3.5 Keyestudio Raspberry Pico IO Shield
 
-#### Overview
+Overview
 
 The Keyestudio Raspberry Pico IO shield is designed for Raspberry Pi Pico. No soldering required. To make the connection easier, the interfaces on the shield have silkscreen labels. 
 
@@ -325,7 +325,7 @@ The shield also comes with a reset button, a PWR power indicator and four holes.
 
 The shield offers a variety of communication interfaces including I2C, UART, SPI, analog IO and digital IO, and provides an interface of power supply ranging from 6.5V to 12V.
 
-#### Specifications
+Specifications
 
 - Output current: ≦500mA
 - DC input voltage: 6.5 - 12V
@@ -336,11 +336,11 @@ The shield offers a variety of communication interfaces including I2C, UART, SPI
 
 
 
-#### Schematic diagram
+Schematic diagram
 
 ![image-20230424082122134](media/image-20230424082122134.png)
 
-#### Pinout
+Pinout
 
 ![image-20230424082132550](media/image-20230424082132550.png)
 
@@ -358,15 +358,15 @@ There are 37 sensors and modules in this kit. Next, we will analyze and introduc
 
 
 
-### Project 1: Lighting up LED
+Project 1: Lighting up LED
 
 ![image-20230424082319794](media/image-20230424082319794.png)
 
-#### **Overview**
+**Overview**
 
 In this project, we will make an experiment to light up the white LED module. The high and low levels can be controlled by programming, then the state of the LED can be controlled.
 
-#### **Working Principle**
+**Working Principle**
 
 The two circuit diagrams are given. The left one is wrong wiring-up diagram. Why? Theoretically, when the S terminal outputs high levels, LED will receive the voltage and light up. 
 
@@ -378,7 +378,7 @@ The triode Q1 is equal to a switch and R1 and R3 stand for limited resistors whi
 
 ![image-20230424082358372](media/image-20230424082358372.png)![image-20230424082403490](media/image-20230424082403490.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424082432810](media/image-20230424082432810.png) | ![image-20230424082439201](media/image-20230424082439201.png) | ![image-20230424082443921](media/image-20230424082443921.png) |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
@@ -386,11 +386,11 @@ The triode Q1 is equal to a switch and R1 and R3 stand for limited resistors whi
 | ![image-20230424082502833](media/image-20230424082502833.png) | ![image-20230424082506753](media/image-20230424082506753.png) |                                                              |
 |                       3P Dupont Wire*1                       |                      Micro USB Cable*1                       |                                                              |
 
-#### **Wiring Diagram**
+**Wiring Diagram**
 
 ![image-20230424082526626](media/image-20230424082526626.png)
 
-#### **Test Code**
+**Test Code**
 
 **Code 1：**
 
@@ -426,7 +426,7 @@ while True:
     time.sleep(1)# wait for 1s
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 | CODE                      | EXPLANATION                                                  |
 | ------------------------- | ------------------------------------------------------------ |
@@ -437,7 +437,7 @@ while True:
 | **while True**            | A loop function.<br />It means that sentences under this function will loop unless **True** changes into **False.** <br />For the function **while**, **led.value(1)**, outputs high levels to the pin 0; then LED lights up. <br />Then the delayed function **time.sleep(1)** will wait for 1s. <br />When **led.value(0)** output low levels to the pin 0, the LED will go off, and the function **time.sleep(1)** will wait for 1s. <br />Cyclically, and LED will flash. |
 |                           |                                                              |
 
-#### **Test Result**
+**Test Result**
 
 Code 1: upload the code and power on, the purple LED on the module will light up.
 
@@ -447,11 +447,11 @@ Code 2: upload the code and power on, the purple LED will flash with the interva
 
 
 
-### Project 2: Traffic Lights Module
+Project 2: Traffic Lights Module
 
 ![image-20230424083533656](media/image-20230424083533656.png)
 
-#### **Overview**
+**Overview**
 
 In this lesson, we will learn how to control multiple LED lights and simulate the operation of traffic lights.
 
@@ -459,13 +459,13 @@ Traffic lights are signal devices positioned at road intersections, pedestrian c
 
 In this kit, we will use the traffic light module to simulate the traffic light.
 
-#### **Working Principle**
+**Working Principle**
 
 In previous lesson, we already know how to control an LED. In this part, we only need to control three separated LEDs. Output high levels to the signal R(3.3V), then the red LED will be on.
 
 ![image-20230424083608872](media/image-20230424083608872.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424083654127](media/image-20230424083654127.png) | ![image-20230424083701432](media/image-20230424083701432.png) | ![image-20230424083705801](media/image-20230424083705801.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -473,11 +473,11 @@ In previous lesson, we already know how to control an LED. In this part, we only
 | ![image-20230424083711769](media/image-20230424083711769.png) | ![image-20230424083735961](media/image-20230424083735961.png) |                                                              |
 | 5P Dupont Wire*1                                             | Micro USB Cable*1                                            |                                                              |
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![image-20230424084247372](media/image-20230424084247372.png)
 
-#### **Test Code:**
+**Test Code:**
 
 ```python
 '''
@@ -507,7 +507,7 @@ while True:
     led_red.value(0)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 Create pins, set pins mode and delayed functions.
 
@@ -515,7 +515,7 @@ We use the **for** loop
 
 The simplest form is **for i in range()**. In the code, we used range(3)，which means the variable i starts from 0，increase 1 for each time. Then the yellow light will be on 0.5s, off for 0.5s and flash three times.
 
-#### **Test Result**
+**Test Result**
 
 Upload the code, the green LED will be on for 5s then off, the yellow LED will flash for 3s then go off and the red one will be on 5s then off.
 
@@ -523,15 +523,15 @@ Upload the code, the green LED will be on for 5s then off, the yellow LED will f
 
 
 
-### **Project 3: Laser Sensor**
+**Project 3: Laser Sensor**
 
 ![image-20230424084429941](media/image-20230424084429941.png)
 
-#### **Description**
+**Description**
 
 Lasers are widely used to cut, weld, surface treat, and more on specific materials. The energy of the laser is very high. The toy laser pointer may cause glare to the human eye, and it may cause retinal damage for a long time. 
 
-#### **Working Principle**
+**Working Principle**
 
 The laser head sensor module is mainly composed of a laser head with a light-emitting die, a condenser lens, and a copper adjustable sleeve.
 
@@ -541,7 +541,7 @@ We can see the circuit schematic diagram of this module which is very similar to
 
 ![image-20230424084555436](media/image-20230424084555436.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424084641186](media/image-20230424084641186.png) | ![image-20230424084646386](media/image-20230424084646386.png) | ![image-20230424084653940](media/image-20230424084653940.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -549,11 +549,11 @@ We can see the circuit schematic diagram of this module which is very similar to
 | ![image-20230424084701886](media/image-20230424084701886.png) | ![image-20230424084708051](media/image-20230424084708051.png) |                                                              |
 | 3P Dupont Wire*1                                             | Micro USB Cable*1                                            |                                                              |
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![image-20230424084723296](media/image-20230424084723296.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -573,17 +573,17 @@ while True:
     time.sleep(2)
 ```
 
-#### **Test Result**
+**Test Result**
 
 Upload the test code and power up, the laser tube on the module emits a red laser signal for 2 seconds, and stops emitting a red laser signal for 2 seconds.
 
 ![image-20230424084759168](media/image-20230424084759168.png)
 
-### Project 4: Button Sensor
+Project 4: Button Sensor
 
 ![image-20230424084815219](media/image-20230424084815219.png)
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a Keyestudio single-channel button module, which mainly uses a tact switch and comes with a yellow button cap.
 
@@ -593,7 +593,7 @@ We can determine whether the button on the sensor is pressed by reading the high
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 The button module has four pins. The pin 1 is connected to the pin 3 and the pin 2 is linked with the pin 4. When the button is not pressed, they are disconnected. 
 
@@ -601,7 +601,7 @@ Yet, when the button is pressed, they are connected. If the button is released, 
 
 ![image-20230424085141538](media/image-20230424085141538.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424085253128](media/image-20230424085253128.png) | ![image-20230424085300267](media/image-20230424085300267.png) | ![image-20230424085307828](media/image-20230424085307828.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -611,11 +611,11 @@ Yet, when the button is pressed, they are connected. If the button is released, 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![image-20230424085408791](media/image-20230424085408791.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -637,7 +637,7 @@ while True:
     time.sleep(0.1) 
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 **button = Pin(15, Pin.IN, Pin.PULL\_UP),** we define the pin of the button as GP15 and set to PULL-UP mode
 
@@ -649,7 +649,7 @@ We can use **button = Pin(15, Pin.IN) to set INPUT mode,** at this time, the pin
 
 3.  When pico detects the button pressed, the signal end is low level (GP 15 is low level). **button.value() is 0.** If pico detects the button unpressed, **button.value()** is 1 and else sentence will be activated.
 
-#### **Test Result**
+**Test Result**
 
 Upload the test code successfully. After powering on the USB cable, open the serial monitor and set the baud rate to 9600. The serial monitor will display the corresponding data and characters. 
 
@@ -661,23 +661,23 @@ When the button is pressed, val is 0，the monitor will show“Press the button�
 
 
 
-### Project 5: Capacitive Sensor
+Project 5: Capacitive Sensor
 
 ![image-20230424085830660](media/image-20230424085830660.png)
 
-#### **Description**
+**Description**
 
 In this kit, there is a capacitive touch module which mainly uses a TTP223-BA6 chip. It is a touch detection chip, which provides a touch button, and its function is to replace the traditional button with a variable area button. 
 
 When we power on, the sensor needs about 0.5 seconds to stabilize. Do not touch the keys during this time period. At this time, all functions are disabled, and self-calibration is always performed. The calibration period is about 4 seconds. We display the test results in the shell.
 
-#### **Working Principle**
+**Working Principle**
 
 ![image-20230424090041373](media/image-20230424090041373.png)
 
 When our fingers touch the module, the signal S outputs high levels, the red LED on the module flashes. We can determine if the button is pressed or not by reading high and low levels on the sensor.
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424090129643](media/image-20230424090129643.png) | ![image-20230424090137370](media/image-20230424090137370.png) | ![image-20230424090144570](media/image-20230424090144570.png) |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
@@ -687,13 +687,13 @@ When our fingers touch the module, the signal S outputs high levels, the red LED
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![image-20230424090224533](media/image-20230424090224533.png)
 
 
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -719,7 +719,7 @@ while True:
 
 When we touch the sensor, the Shell monitor will show “You pressed the button\!”, if not,“You loosen the button\!”will be shown on the monitor.
 
-#### **Test Result**
+**Test Result**
 
 The shell monitor shows corresponding data and characters. In the experiment, when the button is pressed, the red LED lights up and val is 1.Then the shell shows “You pressed the button!”; if the button is released, the red LED is off and val is 0;“You loosen the button!”will be displayed.
 
@@ -727,17 +727,17 @@ The shell monitor shows corresponding data and characters. In the experiment, wh
 
 ![image-20230424090458563](media/image-20230424090458563.png)
 
-### Project 6: Obstacle Avoidance Sensor
+Project 6: Obstacle Avoidance Sensor
 
 ![image-20230424090539365](media/image-20230424090539365.png)
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a Keyestudio obstacle avoidance sensor, which mainly uses an infrared emitting and a receiving tube. 
 
 In the experiment, we will determine whether there is an obstacle by reading the high and low level of the S terminal on the sensor.
 
-#### **Working Principle**
+**Working Principle**
 
 NE555 circuit provides IR signals with frequency to the emitter TX, then the IR signals will fade with the increase of transmission distance. If encountering the obstacle, it will be reflected back.
 
@@ -747,7 +747,7 @@ On the contrary, it the reflected signals are stronger, low levels will be outpu
 
 ![image-20230424090736552](media/image-20230424090736552.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424090824616](media/image-20230424090824616.png) | ![image-20230424090830997](media/image-20230424090830997.png) | ![image-20230424090836772](media/image-20230424090836772.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -757,13 +757,13 @@ On the contrary, it the reflected signals are stronger, low levels will be outpu
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![image-20230424090921975](media/image-20230424090921975.png)
 
 
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -793,7 +793,7 @@ Upload the test code and wire up according to the connection diagram. After powe
 
 2. Adjust the potentiometer receiving frequency. Rotate it clockwise, the frequency will increase. Make the S LED at the critical point of ON and OFF states, then the 38KHz square wave can be produced.
 
-#### **Test Result**
+**Test Result**
 
 Upload the code and open the Shell monitor. When the sensor detects the obstacle, the monitor will show“There are obstacles”; if the obstacle is not detected,“All going well”will be shown.
 
@@ -803,17 +803,17 @@ Upload the code and open the Shell monitor. When the sensor detects the obstacle
 
 
 
-### Project 7: Line Tracking Sensor
+Project 7: Line Tracking Sensor
 
 ![image-20230424091503488](media/image-20230424091503488.png)
 
-#### **Description**
+**Description**
 
 In this kit, there is a DIY electronic building block single-channel line tracking sensor which mainly uses a TCRT5000 reflective black and white line recognition sensor element.
 
 In the experiment, we judge the color (black and white) of the object detected by the sensor by reading the high and low levels of the S terminal on the module; and display the test results on the shell. 
 
-#### **Working Principle**
+**Working Principle**
 
 ![image-20230424091714598](media/image-20230424091714598.png)
 
@@ -821,7 +821,7 @@ When a black or no object is detected, the signal terminal will output high leve
 
 We can adjust the sensitivity by rotating the potentiometer on the sensor. When the potentiometer is rotated, the sensitivity is best when the red LED on the sensor is at the critical point between off and on. 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424091806983](media/image-20230424091806983.png) | ![image-20230424091812529](media/image-20230424091812529.png) | ![image-20230424091815347](media/image-20230424091815347.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -831,11 +831,11 @@ We can adjust the sensitivity by rotating the potentiometer on the sensor. When 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![image-20230424091838500](media/image-20230424091838500.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -870,21 +870,21 @@ In the experiment, when the sensor doesn’t detect an object or detects a black
 
 
 
-### Project 8: Photo Interrupter
+Project 8: Photo Interrupter
 
 ![image-20230424091958935](media/image-20230424091958935.png)
 
-#### **Description**
+**Description**
 
 This kit contains a photo interrupter which mainly uses 1 ITR-9608 photoelectric switch. It is a photoelectric switch optical switch sensor.
 
-#### **Working Principle**
+**Working Principle**
 
 When the paper is put in the slot, C is connected with VCC and the signal end S of the sensor are high levels; then the red LED will be off. Otherwise, the red LED will be on.
 
 ![image-20230424092023720](media/image-20230424092023720.png)
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424092115832](media/image-20230424092115832.png) | ![image-20230424092118946](media/image-20230424092118946.png) | ![image-20230424092121954](media/image-20230424092121954.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -894,11 +894,11 @@ When the paper is put in the slot, C is connected with VCC and the signal end S 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![image-20230424092038007](media/image-20230424092038007.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -923,7 +923,7 @@ while True:
     lastState = State
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 Logic setting:
 
@@ -970,7 +970,7 @@ Logic setting:
 </tr>
 </tbody>
 </table>
-#### **Test Result**
+**Test Result**
 
 Wire up, upload test code, and the shell displays the PushCounter data.
 
@@ -982,21 +982,21 @@ Every time when the object passes through the slot of the sensor, the PushCounte
 
 
 
-### **Project 9: Tilt Module**
+**Project 9: Tilt Module**
 
 ![image-20230424092503614](media/image-20230424092503614.png)
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a Keyestudio tilt sensor. The tilt switch can output signals of different levels according to whether the module is tilted. There is a ball inside. When the switch is higher than the horizontal level, the switch is turned on, and when it is lower than the horizontal level, the switch is turned off. This tilt module can be used for tilt detection, alarm or other detection. 
 
-#### **Working Principle**
+**Working Principle**
 
 ![image-20230424094710267](media/image-20230424094710267.png)
 
 The working principle is pretty simple. When pin 1 and 2 of the ball switch P1 are connected, the signal S is low level and the red LED will light up; when they are disconnected, the pin will be pulled up by the 4.7K R1 and make S a high level, then LED will be off.
 
-#### **Components**
+**Components**
 
 | ![image-20230424094846152](media/image-20230424094846152.png) | ![image-20230424094849427](media/image-20230424094849427.png) | ![image-20230424094852258](media/image-20230424094852258.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1006,11 +1006,11 @@ The working principle is pretty simple. When pin 1 and 2 of the ball switch P1 a
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![image-20230424094911495](media/image-20230424094911495.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1034,7 +1034,7 @@ while True:
     time.sleep(0.1)
 ```
 
-#### **Test Result**
+**Test Result**
 
 Upload the test code and observe Shell
 
@@ -1046,11 +1046,11 @@ When the tilt module is inclined to one side, the red LED on the module will be 
 
 
 
-### Project 10: Hall Sensor
+Project 10: Hall Sensor
 
 ![image-20230424095154464](media/image-20230424095154464.png)
 
-#### **Description**
+**Description**
 
 In this kit, there is a Hall sensor which mainly adopts a A3144 linear Hall element. The element P1 is composed of a voltage regulator, a Hall voltage generator, a differential amplifier, a Schmitt trigger, a temperature compensation circuit and an open-collector output stage.  
 
@@ -1058,13 +1058,13 @@ In the experiment, we use the Hall sensor to detect the magnetic field and displ
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 When the sensor detects no magnetic field or a north pole magnetic field, the signal terminal will be high level; when it senses a south pole magnetic field, the signal terminal will be low levels. 
 
 The stronger the magnetic field strength is, induction distance is longer.
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424095359275](media/image-20230424095359275.png) | ![image-20230424095404470](media/image-20230424095404470.png) | ![image-20230424095407173](media/image-20230424095407173.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1074,13 +1074,13 @@ The stronger the magnetic field strength is, induction distance is longer.
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](media/image-20230424095300791.png)
 
 ![image-20230424095311272](media/image-20230424095311272.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1103,7 +1103,7 @@ while True:
     time.sleep(0.1)
 ```
 
-#### **Test Result**
+**Test Result**
 
 Upload the test code, when the sensor detects no magnetic fields or the north pole magnetic field, Shell will show“1 There is no magnetic field”and the LED on the sensor will be off; When it detects the south pole magnetic field, the Shell will show“0 A magnetic field”and the LED on the sensor will be off.
 
@@ -1113,11 +1113,11 @@ Upload the test code, when the sensor detects no magnetic fields or the north po
 
 
 
-### Project 11: Reed Switch Module
+Project 11: Reed Switch Module
 
 ![image-20230424095815604](media/image-20230424095815604.png)
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a Keyestudio reed switch module, which mainly uses a MKA10110 green reed component.
 
@@ -1131,7 +1131,7 @@ In the experiment, we will determine whether there is a magnetic field near the 
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 ![image-20230424095844969](media/image-20230424095844969.png)
 
@@ -1145,7 +1145,7 @@ Therefore, as a use of the magnetic field signals to control the line switching 
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424100045035](media/image-20230424100045035.png) | ![image-20230424100047930](media/image-20230424100047930.png) | ![image-20230424100050985](media/image-20230424100050985.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1155,13 +1155,13 @@ Therefore, as a use of the magnetic field signals to control the line switching 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![image-20230424100119429](media/image-20230424100119429.png)
 
 
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1186,7 +1186,7 @@ while True:
 
 
 
-#### **Test Result**
+**Test Result**
 
 Upload the code and observe the Shell monitor. 
 
@@ -1198,11 +1198,11 @@ When the sensor detects a magnetic field, val is 0 and the red LED of the module
 
 
 
-### Project 12: PIR Motion Sensor
+Project 12: PIR Motion Sensor
 
 ![image-20230424100202908](media/image-20230424100202908.png)
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a Keyestudio PIR motion sensor, which mainly uses an RE200B-P sensor elements. It is a human body pyroelectric motion sensor based on pyroelectric effect, which can detect infrared rays emitted by humans or animals, and the Fresnel lens can make the sensor's detection range farther and wider.
 
@@ -1210,7 +1210,7 @@ In the experiment, we determine if there is someone moving nearby by reading the
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 The upper left part is voltage conversion(VCC to 3.3V). The working voltage of sensors we use is 3.3V, therefore we can’t use 5V directly. The voltage conversion circuit is needed.
 
@@ -1220,7 +1220,7 @@ When one is detected or an infrared signal is received, and pin 1 of the sensor 
 
 ![image-20230424100308150](media/image-20230424100308150.png)
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424100334992](media/image-20230424100334992.png) | ![image-20230424100403565](media/image-20230424100403565.png) | ![image-20230424100411245](media/image-20230424100411245.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1230,11 +1230,11 @@ When one is detected or an infrared signal is received, and pin 1 of the sensor 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/a5f247d1b76d442ec075ec29653648ba.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1257,7 +1257,7 @@ while True:
     time.sleep(0.1)
 ```
 
-#### **Test Result**
+**Test Result**
 
 Upload the code and open the Shell monitor. When the sensor detects someone nearby, value is 1, the LED will go off and the monitor will show“Somebody is in this area!”. On the contrary, the value is 0, the LED will go up and“0 No one!”will be shown.
 
@@ -1267,17 +1267,17 @@ Upload the code and open the Shell monitor. When the sensor detects someone near
 
 
 
-### Project 13: Active Buzzer
+Project 13: Active Buzzer
 
 ![](/media/f4cc23dc8ed28d408e5a119855e19aa2.jpeg)
 
-#### **Overview**
+**Overview**
 
 In this kit, it contains an active buzzer module and a power amplifier module (the principle is equivalent to a passive buzzer). In this experiment, we control the active buzzer to emit sounds. Since it has its own oscillating circuit, the buzzer will automatically sound if given large voltage.
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 ![](/media/458b66a2a23d6e135e7cf9975fe27507.png)
 
@@ -1289,7 +1289,7 @@ When we output a high level from the IO port to the triode, the buzzer will emit
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424110208988](media/image-20230424110208988.png) | ![image-20230424110212428](media/image-20230424110212428.png) | ![image-20230424110215243](media/image-20230424110215243.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1299,11 +1299,11 @@ When we output a high level from the IO port to the triode, the buzzer will emit
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/e816661c31698424ee1c710228679e7d.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1323,23 +1323,23 @@ while True:
     time.sleep(1)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 In the experiment, we set the pin number to 20. When setting to high, the active buzzer will beep; when setting to low, the active buzzer will stop emitting sounds.
 
 
 
-#### **Test Result**
+**Test Result**
 
 Upload the code and power on. The active buzzer will emit sound for 1 second, and stop for 1 second.
 
 ![](/media/4d04a020bccc360be34122920e86e822.jpeg)
 
-### Project 14: 8002b Audio Power Amplifier
+Project 14: 8002b Audio Power Amplifier
 
 ![](/media/6e8569df97b72e866488a6f414f9e392.jpeg)
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a Keyestudio 8002b audio power amplifier. The main components of this module are an adjustable potentiometer, a speaker, and an audio amplifier chip;
 
@@ -1349,7 +1349,7 @@ In the experiment, we used the 8002b power amplifier speaker module to emit soun
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 In fact, it is similar to a passive buzzer. The active buzzer has its own oscillation source.
 
@@ -1359,7 +1359,7 @@ Yet, the passive buzzer does not have internal oscillation. When controlling the
 
 ![](/media/f5f372e0713df6439a7cc52f5caf1cad.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424110429758](media/image-20230424110429758.png) | ![image-20230424110432701](media/image-20230424110432701.png) | ![image-20230424110435468](media/image-20230424110435468.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1369,11 +1369,11 @@ Yet, the passive buzzer does not have internal oscillation. When controlling the
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/d7a129cb825ec46ad272f072cabdd90a.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1405,7 +1405,7 @@ sleep(0.5)
 buzzer.duty_u16(0)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 1. In this experiment, we use the PWM class of the machine module, buzzer = PWM(Pin(21)) to create an instance of the PWM class, and the buzzer pin is connected to GP21.
 2. The buzzer.duty\_u16(1000): set the duty cycle, and the duty cycle is 1000/65535. The larger the value, the louder the buzzer. When set to 0, the buzzer does not emit sound. **buzzer.freq()** is the frequency setting method.
@@ -1416,7 +1416,7 @@ Buzzer = PWM(Pin(21))
 $$
 
 
-#### **Test Result**
+**Test Result**
 
 Upload the test code successfully and power on. The power amplifier module will emit the sound of the corresponding frequency corresponding to the beat:
 
@@ -1424,11 +1424,11 @@ DO for 0.5s, Re for 0.5s, Mi for 0.5s, Fa for 0.5s, So for 0.5s, La 0.5s and Si 
 
 ![](/media/3e4f5e7c1b555f11e01b9db4f5e6be30.jpeg)
 
-### Project 15: 130 Motor
+Project 15: 130 Motor
 
 ![](/media/6c4e0d18c7c1867e27c0bac8e1c6412b.jpeg)
 
-#### **Description**
+**Description**
 
 The 130 motor driver module is compatible with servo motors, which has high efficiency and good quality fans. 
 
@@ -1436,7 +1436,7 @@ It adopts a HR1124S motor control chip. HR1124S is a single-channel H-bridge dri
 
  The module is compatible with various single-chip control boards. In the experiment, we can control the rotation direction of the motor by outputting the voltage directions of the two signal terminals IN+ and IN- to make the motor rotate. 
 
-#### **Working Principle**
+**Working Principle**
 
 The chip is used to help drive the motor. 
 
@@ -1446,7 +1446,7 @@ So we can use the PWM port to control the speed of the motor. We haven't learned
 
 ![](/media/5ea2e4d2b18f87ffa9a31e834764ec4b.png)
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424111023281](media/image-20230424111023281.png) | ![image-20230424111028608](media/image-20230424111028608.png) | ![image-20230424111036561](media/image-20230424111036561.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1458,11 +1458,11 @@ Note: the motor is separated with its fan, you need to assemble it first.
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/83eb45f2c40b4ed32c034958b717f841.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1500,19 +1500,19 @@ while True:
 
 
 
-#### **Code Explanation**
+**Code Explanation**
 
 Set pins to 14 and 15, when the pin 14 outputs high levels and the pin 15 outputs low levels, the motor will rotate counterclockwise; when both pins are set to low, the motor stops rotating. 
 
 
 
-#### **Test Result**
+**Test Result**
 
 Wire up, upload test code and test the 130 motor, the fan will rotate counterclockwise for 2 seconds, stop for 1 second; and rotate clockwise for 2 seconds and stop for 1 second; cycle alternately.
 
 ![](/media/34de9462f97a58421247a4225e3c6528.jpeg)
 
-### Project 16: RGB Module
+Project 16: RGB Module
 
 ![](/media/b3515a7e0340f391bef256c9ed6ccd4b.jpeg)
 
@@ -1538,7 +1538,7 @@ For our experiment, we will control the RGB module to display different colors t
 
 
 
-#### **Components**
+**Components**
 
 ![](/media/71e990d503b6f1822379091a37f58a6b.jpeg)
 
@@ -1550,11 +1550,11 @@ For our experiment, we will control the RGB module to display different colors t
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/9c7dfc42ed6ec851da62244db01ca496.png)
 
-#### **Test **Code
+**Test **Code
 
 **Code 1：**
 
@@ -1628,7 +1628,7 @@ while 1:
     sleep(1)
 ```
 
-#### **Explanation**
+**Explanation**
 
 **Code 1：**
 
@@ -1650,7 +1650,7 @@ In the experiment, we adjust the ratio of red, green and blue colors on the RGB 
 
 ![](/media/6a1d29586dac3a7699f8415e90d90742.png)<img src="/media/4dea29ef0ba554d3ec21186d0dfb9890.png" style="zoom:112%;" /> 
 
-#### **Test Result**
+**Test Result**
 
 Upload the code 1, the RGB on the module will show red, green and bluecolor with an interval of 1s.
 
@@ -1660,11 +1660,11 @@ Upload the code 2, the RGB on the module will show red, orange, yellow, green, c
 
 
 
-### Project 17: Potentiometer
+Project 17: Potentiometer
 
 ![](/media/fe92a4f36758bc236d94290478fe5eac.jpeg)
 
-#### **Overview**
+**Overview**
 
 The following we will introduce is the Keyestudio rotary potentiometer which is an analog sensor.
 
@@ -1674,11 +1674,11 @@ In the experiment, we will display the test results on the Shell.
 
 ![](/media/a6ca9064a864e572984fdc41207eaaca.jpeg)
 
-#### **Working Principle**
+**Working Principle**
 
 It uses a 10K adjustable resistor. We can change the resistance by rotating the potentiometer. The signal S can detect the voltage changes(0-3.3V) which are analog quantity.
 
-#### **Components**
+**Components**
 
 | ![image-20230424112132315](media/image-20230424112132315.png) | ![image-20230424112135607](media/image-20230424112135607.png) | ![image-20230424112142759](media/image-20230424112142759.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1688,11 +1688,11 @@ It uses a 10K adjustable resistor. We can change the resistance by rotating the 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/fd0b5491083835560e344ed545f5da01.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1712,7 +1712,7 @@ while True:
     utime.sleep(0.1)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 In the experiment, we will create ADC example, connect GP26 ADC(26). That means ADC(0).
 
@@ -1724,7 +1724,7 @@ In the experiment, we will create ADC example, connect GP26 ADC(26). That means 
 
 
 
-#### **Test Result**
+**Test Result**
 
 Upload the code power up by a USB cable, open the serial monitor and set baud rate to 9600. 
 
@@ -1738,11 +1738,11 @@ In the experiment, rotate the potentiometer clockwise, the analog value increase
 
 
 
-### Project 18: Steam Sensor
+Project 18: Steam Sensor
 
 ![](/media/0062e47b90828244595c1fb93c45f1d5.jpeg)
 
-#### **Description**
+**Description**
 
 This is a commonly used steam sensor. Its principle is to detect the amount of water by bare printed parallel lines on the circuit board. The more the water is, the more wires will be connected. As the conductive contact area increases, the output voltage will gradually rise. It can detect water vapor in the air as well. The steam sensor can be used as a rain water detector and level switch. When the humidity on the sensor surface surges, the output voltage will increase.
 
@@ -1752,7 +1752,7 @@ This is a DIY electronic building block water drop sensor. It is an analog (digi
 
 In the experiment, we input the sensor signal terminal (S terminal) to the analog port of the pico development board, sense the change of the analog value, and display the corresponding analog value on the shell.
 
-#### **Working Principle**
+**Working Principle**
 
 Its principle is to detect the amount of water through the exposed printed parallel lines on the circuit board. The more water there is, the more wires will be connected, and the conductive contact area increases. The voltage output by pin 2 will gradually increase. The larger the analog value detected by the signal terminal S is.
 
@@ -1760,7 +1760,7 @@ It can also detect steam in the air. Two position holes are used to install on t
 
 ![](/media/790270169035ee740b28c49c4b1dde47.png)
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424113316958](media/image-20230424113316958.png) | ![image-20230424113336413](media/image-20230424113336413.png) | ![image-20230424113347140](media/image-20230424113347140.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1770,11 +1770,11 @@ It can also detect steam in the air. Two position holes are used to install on t
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/506b3ebf75246b8fe2b8b024b41dc276.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1805,15 +1805,15 @@ Wire up, run the test code, then the output analog value is displayed in the she
 
 
 
-### Project 19: Sound Sensor
+Project 19: Sound Sensor
 
 ![](/media/c4d4961f71c7e91bae04507f72cb56eb.jpeg)
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a sound sensor. In the experiment, we test the analog value corresponding to the sound level in the current environment with it. The louder the sound, the larger the analog value.
 
-#### **Working Principle**
+**Working Principle**
 
 ![](/media/d55fc5234be47e7727c0bf48c049e341.jpeg)
 
@@ -1823,7 +1823,7 @@ We build the circuit with the LM386 chip and amplify the sound through the high-
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424113804150](media/image-20230424113804150.png) | ![image-20230424113810183](media/image-20230424113810183.png) | ![image-20230424113813839](media/image-20230424113813839.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1833,11 +1833,11 @@ We build the circuit with the LM386 chip and amplify the sound through the high-
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/00ef9bf64d6866acfed596128fbb0401.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1856,7 +1856,7 @@ while True:
     utime.sleep(0.1)
 ```
 
-#### **Test Result**
+**Test Result**
 
 Upload the code and observe the analog value on the Shell monitor.
 
@@ -1868,11 +1868,11 @@ Rotate clockwise the potentiometer and speak at the MIC. Then you can see the an
 
 
 
-### Project 20: Photoresistor
+Project 20: Photoresistor
 
 ![](/media/37bb57bcf72ba62056bbc61164185f0a.png)
 
-#### **Description**
+**Description**
 
 In this kit, there is a photoresistor which consists of photosensitive resistance elements. Its resistance changes with the light intensity. 
 
@@ -1880,13 +1880,13 @@ Also, it converts the resistance change into a voltage change through the charac
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 If there is no light, the resistance is 0.2MΩ and the detected voltage at the terminal 2 is close to 0. When the light intensity increases, the resistance of photoresistor and detected voltage will diminish. 
 
 ![](/media/7a523e0fa1beca5bd50fbe5eb5daa64f.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424114100360](media/image-20230424114100360.png) | ![image-20230424114107154](media/image-20230424114107154.png) | ![image-20230424114111681](media/image-20230424114111681.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1896,11 +1896,11 @@ If there is no light, the resistance is 0.2MΩ and the detected voltage at the t
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/a1088d3e804eedc28ee1d8c9855cdb68.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1919,7 +1919,7 @@ while True:
     utime.sleep(0.1)
 ```
 
-#### **Test Result**
+**Test Result**
 
 Wire up, run the test code, observe the Shell monitor. Then you will view the analog value of the light intensity. The brighter the light, the greater the analog value.
 
@@ -1929,11 +1929,11 @@ Wire up, run the test code, observe the Shell monitor. Then you will view the an
 
 
 
-### Project 21: NTC-MF52AT Thermistor
+Project 21: NTC-MF52AT Thermistor
 
 ![](/media/868d93395d983645baab872091991403.jpeg)
 
-#### **Overview**
+**Overview**
 
 In the experiment, there is a NTC-MF52AT analog thermistor. We connect its signal terminal to the analog port of the Raspberry Pi Pico Board and read the corresponding analog value. 
 
@@ -1941,7 +1941,7 @@ We can use analog values to calculate the temperature of the current environment
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 ![](/media/84a67bb2b90b4740c09d914dc6402f48.png)
 
@@ -1951,7 +1951,7 @@ This sensor uses the characteristics of NTC-MF52AT thermistor element to  conver
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424114714485](media/image-20230424114714485.png) | ![image-20230424114739316](media/image-20230424114739316.png) | ![image-20230424114733540](media/image-20230424114733540.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1961,11 +1961,11 @@ This sensor uses the characteristics of NTC-MF52AT thermistor element to  conver
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/9dc4049d34a9c264b4dd1d7361cdfe4e.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -1988,7 +1988,7 @@ while True:
 
 
 
-#### **Test Result**
+**Test Result**
 
 Upload the code and observe the Shell monitor. The higher the temperature, the larger the analog value.
 
@@ -1998,23 +1998,23 @@ Upload the code and observe the Shell monitor. The higher the temperature, the l
 
 
 
-### Project 22: Thin-film Pressure Sensor
+Project 22: Thin-film Pressure Sensor
 
 ![](/media/a9ae2963fc87b3502703f7dd5eb208ec.jpeg)
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a Keyestudio thin-film pressure sensor. The thin-film pressure sensor composed of a new type of nano pressure-sensitive material and a comfortable ultra-thin film substrate, has waterproof and pressure-sensitive functions.
 
 In the experiment, we determine the pressure by collecting the analog signal on the S end of the module. The smaller the analog value, the greater the pressure; and the displayed results will shown on the Shell.
 
-#### **Working Principle**
+**Working Principle**
 
 When the sensor is pressed by external forces, the resistance value of sensor will vary. We convert the pressure signals detected by the sensor into the electric signals through a circuit. Then we can obtain the pressure changes by detecting voltage signal changes.
 
 ![](/media/520fa537602873d2a337731318668348.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424115146415](media/image-20230424115146415.png) | ![image-20230424115210071](media/image-20230424115210071.png) | ![image-20230424115256785](media/image-20230424115256785.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2024,11 +2024,11 @@ When the sensor is pressed by external forces, the resistance value of sensor wi
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/445c732571d879e6f5708af6f10fb03d.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -2047,7 +2047,7 @@ while True:
     utime.sleep(0.1)
 ```
 
-#### **Test Result**
+**Test Result**
 
 Upload the code and observe the Shell monitor. When the thin-film is pressed by fingers, the analog value will decrease, as shown below;
 
@@ -2057,17 +2057,17 @@ Upload the code and observe the Shell monitor. When the thin-film is pressed by 
 
 
 
-### Project 23: Flame Sensor
+Project 23: Flame Sensor
 
 ![](/media/c6c3bf0c9bf0af22a2aa06c5b7399cfd.jpeg)
 
-#### **Description**
+**Description**
 
 In daily life, it is often seen that a fire broke out without any precaution. It will cause great economic and human loss. So how can we avoid this situation? Right, install a flame sensor and a speaker in those places that easily break out a fire. When the flame sensor detects a fire, the speaker will alarm people quickly to put out the fire.
 
 So in this project, you will learn how to use a flame sensor and an active buzzer module to simulate the fire alarm system.   
 
-#### **Working Principle**
+**Working Principle**
 
 This flame sensor can be used to detect fire or other light sources with wavelength stands at 760nm ~ 1100nm. Its detection angle is about 60°. You can rotate the potentiometer on the sensor to control its sensitivity. Adjust the potentiometer to make the LED at the critical point between on and off state. The sensitivity is the best.  
 
@@ -2075,7 +2075,7 @@ From the below figure, power up. When detecting fire, the digital pin outputs lo
 
 ![](/media/01f69822915149445858a471784ebddf.png)
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424115957280](media/image-20230424115957280.png) | ![image-20230424120000907](media/image-20230424120000907.png) | ![image-20230424120004299](media/image-20230424120004299.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2085,11 +2085,11 @@ From the below figure, power up. When detecting fire, the digital pin outputs lo
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/d388bce2707000a4a8957267eecf51c7.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -2114,13 +2114,13 @@ while True:
 
 
 
-#### **Code Explanation**
+**Code Explanation**
 
 Two pins we use are defined as 22 and 26 according to the wiring-up diagram, and print digital signals and analog signals respectively.
 
 
 
-#### **Test Result**
+**Test Result**
 
 Upload the test code and power up, LED2 is on and LED1 is off.  Open the monitor and set baud rate to 9600. When fire is detected, LED1 will be on. the digital value will change from 1 to 0, and the analog value will become smaller, as shown in the figure below.
 
@@ -2130,11 +2130,11 @@ Upload the test code and power up, LED2 is on and LED1 is off.  Open the monitor
 
 
 
-### Project 24: MQ-2 Gas Sensor
+Project 24: MQ-2 Gas Sensor
 
 ![](/media/f712788d3997805df25abe4a99d42461.GIF)
 
-#### **Description**
+**Description**
 
 This analog gas sensor - MQ2 is used in gas leakage detecting equipment in consumer electronics and industrial markets.
 
@@ -2144,7 +2144,7 @@ In addition, the sensitivity can be adjusted by rotating the potentiometer.
 
 In the experiment, we read the analog value at the A0 port and the D0 port to determine the content of gas.
 
-#### **Working Principle**
+**Working Principle**
 
 ![](/media/c55edbe71237172f6b80877504a9debb.png)
 
@@ -2156,7 +2156,7 @@ When the measured gas content exceeds the critical point, the D0 terminal output
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424120311507](media/image-20230424120311507.png) | ![image-20230424120314621](media/image-20230424120314621.png) | ![image-20230424120317375](media/image-20230424120317375.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2166,11 +2166,11 @@ When the measured gas content exceeds the critical point, the D0 terminal output
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/ebd6c2127842acc8011cf7a2aa5d9c2d.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -2199,7 +2199,7 @@ while True:
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code, the yellow-green LED on the module lights up, observe the shell, and display the corresponding data and characters. 
 
@@ -2213,11 +2213,11 @@ Then it means that the analog value of the critical point of gas content is betw
 
 
 
-### Project 25: Joystick Module
+Project 25: Joystick Module
 
 ![](/media/a28a09d0d9103cc8b93f2ae71f98482a.jpeg)
 
-#### **Overview**
+**Overview**
 
 Game handle controllers are ubiquitous. 
 
@@ -2225,7 +2225,7 @@ It mainly uses PS2 joysticks. When controlling it, we need to connect the X and 
 
 In the experiment, two analog values(x axis and y axis) will be shown on Shell.
 
-#### **Working Principle**
+**Working Principle**
 
 ![](/media/efcb8ed421ab3572af890d73788a8c01.jpeg)
 
@@ -2233,7 +2233,7 @@ In fact, its working principle is very simple. Its inside structure is equivalen
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424120540306](media/image-20230424120540306.png) | ![image-20230424120543664](media/image-20230424120543664.png) | ![image-20230424120546894](media/image-20230424120546894.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2243,11 +2243,11 @@ In fact, its working principle is very simple. Its inside structure is equivalen
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/8f2094524e2a560df485e13786667d28.png)
 
-#### **Test Code**
+**Test Code**
 
     '''
      * Keyestudio 37 in 1 Starter Kit for Raspberry Pi Pico
@@ -2273,13 +2273,13 @@ In fact, its working principle is very simple. Its inside structure is equivalen
         print(Y_value)
         utime.sleep(0.1)
 
-#### **Code Explanation**
+**Code Explanation**
 
 In the experiment, according to the wiring diagram, the x pin is set to ADC(26), the y pin is set to ADC(27) and the pin of the joystick is set to GP22.
 
 Then print() function will print without changing lines.
 
-#### **Test Result**
+**Test Result**
 
 Run the test code and observe Shell monitor to display corresponding value. 
 
@@ -2291,11 +2291,11 @@ Move the joystick, analog values at X and Y axis will change then press the butt
 
 
 
-### Project 26: Ultraviolet Sensor
+Project 26: Ultraviolet Sensor
 
 ![](/media/73df098dc8f87602650d64810bacad7a.png)
 
-#### **Description**
+**Description**
 
 There is a ultraviolet Sensor used for UV index monitoring, UV radiation dose measurement, flame detection. Suitable for measuring UV index of smart wearable devices, such as UV index detection of watches, smartphones and outdoor equipment. It can also be used to monitor the intensity of UV light, or as a UV flame detector when UV sanitizing items. 
 
@@ -2303,7 +2303,7 @@ The sensor has a specific spectral response. In the experiment, we use the purpl
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 The output current of the UV sensor is proportional to the light intensity, and the output of the product has a very high consistency. The module circuit has been set up, and we directly use the ADC to collect the analog signal.
 
@@ -2311,7 +2311,7 @@ The output current of the UV sensor is proportional to the light intensity, and 
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424120940854](media/image-20230424120940854.png) | ![image-20230424120943650](media/image-20230424120943650.png) | ![image-20230424120946945](media/image-20230424120946945.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2321,7 +2321,7 @@ The output current of the UV sensor is proportional to the light intensity, and 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/0394987102b736d2f122daf2e3ef55f7.png)
 
@@ -2329,7 +2329,7 @@ The output current of the UV sensor is proportional to the light intensity, and 
 
 
 
-#### Test Code
+Test Code
 
 ```python
 '''
@@ -2351,7 +2351,7 @@ while True:
     utime.sleep(0.1)
 ```
 
-#### **Test Result**
+**Test Result**
 
 After running the test code, the Shell displays the corresponding UV value. When we make the LED close to the ultraviolet module. Then view the data on the Shell monitor, as shown below:
 
@@ -2361,11 +2361,11 @@ After running the test code, the Shell displays the corresponding UV value. When
 
 
 
-### **Project 27: SK6812 RGB Module**
+**Project 27: SK6812 RGB Module**
 
 ![](/media/effda831f7c06cea2c443d8352f1a693.jpeg)
 
-#### **Overview**
+**Overview**
 
 In previous lessons, we learned about the plug-in RGB module and used PWM signals to color the three pins of the module. 
 
@@ -2375,7 +2375,7 @@ In the experiment, we make different lights show different colors.
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 From the schematic diagram, we can see that these four pixel lighting beads are all connected in series. In fact, no matter how many they are, we can use a pin to control a light and let it display any color. 
 
@@ -2385,7 +2385,7 @@ The data protocol adopts a single-wire zero-code communication method. After the
 
 ![](/media/f0d824a10a88aa0fbabfb685634672fc.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424131435741](media/image-20230424131435741.png) | ![image-20230424131444304](media/image-20230424131444304.png) | ![image-20230424131449995](media/image-20230424131449995.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2395,11 +2395,11 @@ The data protocol adopts a single-wire zero-code communication method. After the
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/25f4d0f5d90c89ed44e61fd160c34e63.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -2480,7 +2480,7 @@ pixels_show()
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code, wire up and power up. Then we can see four LED beads show red, green, blue and white color; as shown below;
 
@@ -2488,11 +2488,11 @@ Run the test code, wire up and power up. Then we can see four LED beads show red
 
 
 
-### Project 28: Rotary Encoder
+Project 28: Rotary Encoder
 
 ![](/media/ec37b336b8f5620b62b04224b132840a.jpeg)
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a Keyestudio rotary encoder, dubbed as switch encoder. It is applied to automotive electronics, multimedia audio, instrumentation, household appliances, smart home, medical equipment and so on.
 
@@ -2500,7 +2500,7 @@ In the experiment, it it used for counting. When we rotate the rotary encoder cl
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 ![](/media/2fb56ec6fa69e66fcca4243617d4b18c.jpeg)
 
@@ -2510,7 +2510,7 @@ This module mainly uses 20-pulse rotary encoder components. It can calculate the
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424132119599](media/image-20230424132119599.png) | ![image-20230424132122582](media/image-20230424132122582.png) | ![image-20230424132125366](media/image-20230424132125366.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2520,11 +2520,11 @@ This module mainly uses 20-pulse rotary encoder components. It can calculate the
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/be52de6cb96ad45601f2bae496b227a3.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -2561,7 +2561,7 @@ while True:
         break
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 In the experiment, we need to add the rotary encoder to pico, then import the module.
 
@@ -2578,7 +2578,7 @@ You only need to save the .py file to pico
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code, observe the Shell below. Rotate the encoder clockwise, the displayed data decrease; rotate the encoder counterclockwise, the displayed data increase; press the button of the encoder, the displayed data is the value of the encoder, as shown in the figure below.
 
@@ -2588,11 +2588,11 @@ Run the test code, observe the Shell below. Rotate the encoder clockwise, the di
 
 
 
-### Project 29: Servo Control
+Project 29: Servo Control
 
 ![](/media/165f16e47a832fc4dcaea6e4a1c11194.jpeg)
 
-#### **Overview**
+**Overview**
 
 Servo motor is a position control rotary actuator. It mainly consists of a housing, a circuit board, a core-less motor, a gear and a position sensor. 
 
@@ -2604,7 +2604,7 @@ In general, servo has three lines in brown, red and orange. The brown wire is gr
 
 ![](/media/3366fe332bcf286659f9bf21a8cf880f.png)
 
-#### **Working Principle**
+**Working Principle**
 
 When the motor speed is constant, the potentiometer is driven to rotate through the cascade reduction gear, which leads that the voltage difference is 0, and the motor stops rotating. Generally, the angle range of servo rotation is 0° --180 °
 
@@ -2616,7 +2616,7 @@ But note that for different brand motors, the same signal may have different rot
 
 ![](/media/b4993212773e13b1a4424b3d7ef41ab6.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424132455316](media/image-20230424132455316.png) | ![image-20230424132458568](media/image-20230424132458568.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2626,11 +2626,11 @@ But note that for different brand motors, the same signal may have different rot
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/a3bd832d331618aa588e222b097ab0e5.png)
 
-#### Test Code
+Test Code
 
 **Code 1：**
 
@@ -2706,7 +2706,7 @@ while True:
         setServoCycle(pos)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 **Code 1：**
 
@@ -2720,7 +2720,7 @@ x is the value we want to map; **i_m, i_M** are the lower and upper limits of th
 
 
 
-#### Test Result
+Test Result
 
 **Test Result 1：**
 
@@ -2734,9 +2734,9 @@ Run the test code successfully, the servo rotates back and forth from 0 to 180 d
 
 
 
-### Project 30: Ultrasonic Sensor
+Project 30: Ultrasonic Sensor
 
-#### **Overview**
+**Overview**
 
 In this kit, there is a keyes HC-SR04 ultrasonic sensor, which can detect obstacles in front and the detailed distance between the sensor and the obstacle. Its principle is the same as that of bat flying. It can emit the ultrasonic signals that cannot be heard by humans. When these signals hit an obstacle and come back immediately. The distance between the sensor and the obstacle can be calculated by the time gap of emitting signals and receiving signals.
 
@@ -2746,7 +2746,7 @@ Ultrasonic detector module can provide 2cm-450cm non-contact sensing distance, a
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 The most common ultrasonic ranging method is the echo detection. As shown below; when the ultrasonic emitter emits the ultrasonic waves towards certain direction, the counter will count. The ultrasonic waves travel and reflect back once encountering the obstacle. Then the counter will stop counting when the receiver receives the ultrasonic waves coming back.
 
@@ -2766,7 +2766,7 @@ The HC-SR04 ultrasonic ranging module can provide a non-contact distance sensing
 
 ![](/media/686176f637ba288e3b20d63bb1054477.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424133036082](media/image-20230424133036082.png) | ![image-20230424133041562](media/image-20230424133041562.png) | ![image-20230424133044971](media/image-20230424133044971.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2776,11 +2776,11 @@ The HC-SR04 ultrasonic ranging module can provide a non-contact distance sensing
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/43d54e1cb123332f30da8af5240f4b28.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -2816,7 +2816,7 @@ while True:
     utime.sleep(0.1)
 ```
 
-#### **Test Result**
+**Test Result**
 
 Run the test code and observe the Shell monitor.
 
@@ -2828,11 +2828,11 @@ Display the distance between the sensor and the obstacle, the unit is cm, as sho
 
 
 
-### Project 31: IR Receiver Module
+Project 31: IR Receiver Module
 
 ![](/media/80e8f8d8ddc35df9425032ec4ef783ee.png)
 
-#### **Overview**
+**Overview**
 
 There is no doubt that infrared remote control is ubiquitous in daily life. It is used to control various household appliances, such as TVs, stereos, video recorders and satellite signal receivers. 
 
@@ -2844,7 +2844,7 @@ In the experiment, we use the IR receiver to receive the infrared signal emitted
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 ![](/media/845973091e7fe407e7fa0e96fc1cf4f1.png)
 
@@ -2854,7 +2854,7 @@ The modulated carrier frequency is generally between 30khz and 60khz, and most o
 
 ![](/media/447c2e4321968e2134d6f960db8dc880.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424133306641](media/image-20230424133306641.png) | ![image-20230424133309723](media/image-20230424133309723.png) | ![image-20230424133312779](media/image-20230424133312779.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2864,11 +2864,11 @@ The modulated carrier frequency is generally between 30khz and 60khz, and most o
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/308cd89f930bb7478d8ef9355bb1a844.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -2933,7 +2933,7 @@ while True:
     utime.sleep(0.5)
 ```
 
-#### **Test Result**
+**Test Result**
 
 Find the infrared remote control, pull out the insulating sheet, and press the button at the receiving head of the infrared receiving sensor. 
 
@@ -2945,11 +2945,11 @@ After receiving the signal, the LED on the infrared receiving sensor also starts
 
 
 
-### Project 32: DS18B20 Temperature Sensor
+Project 32: DS18B20 Temperature Sensor
 
 ![](/media/29c66f83d6ea8bbc378b0508e78d5f3b.png)
 
-#### **Description**
+**Description**
 
 The DS18B20 is a 1-wire programmable Temperature sensor from maxim integrated. It is widely used to measure temperature in hard environments like in chemical solutions, mines or soil etc. The constriction of the sensor is rugged and also can be purchased with a waterproof option making the mounting process easy. It can measure a wide range of temperature from **-55°C to +125°** with a decent accuracy of **±5°C**. 
 
@@ -2957,7 +2957,7 @@ Each sensor has a unique address and requires only one pin of the MCU to transfe
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 ![](/media/eef2d84a2ad003d15575726341de52bf.png)
 
@@ -2979,7 +2979,7 @@ The temperature measurement range of DS18B20 is from -55 degrees to +125 degrees
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424133636197](media/image-20230424133636197.png) | ![image-20230424133639213](media/image-20230424133639213.png) | ![image-20230424133642093](media/image-20230424133642093.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2989,11 +2989,11 @@ The temperature measurement range of DS18B20 is from -55 degrees to +125 degrees
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/49142e4db454acf9dea15dc094038a0d.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -3027,7 +3027,7 @@ while True:
   time.sleep(1)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 We need to import the DS18B20 module.
 
@@ -3039,7 +3039,7 @@ Shell means temperature value, ds\_sensor.read\_temp(rom) is used to read temper
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code, the shell displays the temperature of the current environment, as shown below.
 
@@ -3049,11 +3049,11 @@ Run the test code, the shell displays the temperature of the current environment
 
 
 
-### Project 33: XHT11 Temperature and Humidity Sensor
+Project 33: XHT11 Temperature and Humidity Sensor
 
 ![](/media/1153b275e0f6c086c9e4225084acf246.png)
 
-#### **Description**
+**Description**
 
 This DHT11 temperature and humidity sensor is a composite sensor which contains a calibrated digital signal output of the temperature and humidity.
 
@@ -3063,7 +3063,7 @@ It includes a resistive element and a NTC temperature measuring device.
 
 ![](/media/ac0d6049bc0a5ae8cc515d23b85ecad0.png)
 
-#### **Working Principle**
+**Working Principle**
 
 The communication and synchronization between the single-chip microcomputer and XHT11 adopts the single bus data format. The communication time is about 4ms. The data is divided into fractional part and integer part. 
 
@@ -3073,7 +3073,7 @@ Operation process: A complete data transmission is 40bit, high bit first out. Da
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424133826549](media/image-20230424133826549.png) | ![image-20230424133829648](media/image-20230424133829648.png) | ![image-20230424133832591](media/image-20230424133832591.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3083,11 +3083,11 @@ Operation process: A complete data transmission is 40bit, high bit first out. Da
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/3a4e83e206100aff0ddd3468787bea43.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -3108,7 +3108,7 @@ while True:
     utime.sleep(1)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 In the experiment, we need to import the XHT11 library：
 
@@ -3120,7 +3120,7 @@ We set the pin to GP22, read the temperature data
 
 
 
-#### **Test Result**
+**Test Result**
 
 After running the test code, the shell displays the temperature and humidity data, as shown below.
 
@@ -3130,11 +3130,11 @@ After running the test code, the shell displays the temperature and humidity dat
 
 
 
-### Project 34: DS1307 Clock Module
+Project 34: DS1307 Clock Module
 
 ![](/media/949abbbea3c8d8b36463768a39a07b51.png)
 
-#### **Overview**
+**Overview**
 
 The DS1307 serial real-time clock (RTC) is a low-power, full binary-coded decimal (BCD) clock/calendar plus 56 bytes of NV SRAM.  Address and data are transferred serially through an I2C,  bidirectional bus. 
 
@@ -3144,7 +3144,7 @@ Timekeeping operation continues while the part operates from the backup supply.
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 ![](/media/92b8dc82b0c2887539bd506639cfbfc0.png)
 
@@ -3164,7 +3164,7 @@ SQW/OUT: square waves/output drivers
 
 ![](/media/abdebbfc01cae240e3e81fb188344cbe.png)
 
-#### **Components**
+**Components**
 
 | ![image-20230424134303740](media/image-20230424134303740.png) | ![image-20230424134309569](media/image-20230424134309569.png) | ![image-20230424134328482](media/image-20230424134328482.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3174,7 +3174,7 @@ SQW/OUT: square waves/output drivers
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/2299493bd97bc28f2f97fb1f71977531.jpeg)
 
@@ -3182,7 +3182,7 @@ VUSB is 5V，then connect the power to VUSB.
 
 
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -3224,7 +3224,7 @@ while True:
 
 
 
-#### **Code Explanation**
+**Code Explanation**
 
 We need to import the urtc module, as shown below;
 
@@ -3250,7 +3250,7 @@ We need to import the urtc module, as shown below;
 
 
 
-#### **Test Result**
+**Test Result**
 
 Upload the code and view the Shell monitor. We can see the displayed year, month, day, hour, minute, second and week, as shown below;
 
@@ -3260,11 +3260,11 @@ Upload the code and view the Shell monitor. We can see the displayed year, month
 
 
 
-### Project 35: TM1650 4-Digit Tube Display
+Project 35: TM1650 4-Digit Tube Display
 
 ![](/media/f698ea56391906278b7c8064fca42bb3.jpeg)
 
-#### **Overview**
+**Overview**
 
 This module is mainly composed of a 0.36 inch red common anode 4-digit digital tube, and its driver chip is TM1650. When using it, we only need two signal lines to make the single-chip microcomputer control a 4-bitdigit tube, which greatly saves the IO port resources of the control board.
 
@@ -3278,7 +3278,7 @@ TM1650 uses 2-wire serial transmission protocol for communication (note that thi
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 TM1650 adopts IIC treaty and SDA and SCL wire.
 
@@ -3298,7 +3298,7 @@ bit\[3\]：set to show decimal points
 
 bit\[0\]：start the display of the tube display
 
-#### **Components**
+**Components**
 
 | ![image-20230424135017887](media/image-20230424135017887.png) | ![image-20230424135024038](media/image-20230424135024038.png) | ![image-20230424135027573](media/image-20230424135027573.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3308,11 +3308,11 @@ bit\[0\]：start the display of the tube display
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/fa5d4a6dddd43851d68a6fa82b90d13e.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -3499,7 +3499,7 @@ while True:
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code, wire up and power on. The 4-digit tube display will show integer from 0 to 99999, an increase of 1 for each 10ms, then start from 0 once reaching 99999.
 
@@ -3507,17 +3507,17 @@ Run the test code, wire up and power on. The 4-digit tube display will show inte
 
 
 
-### Project 36: HT16K33\_8X8 Dot Matrix Module
+Project 36: HT16K33\_8X8 Dot Matrix Module
 
 ![](/media/431b6c4abd63b99219658a03d24de991.jpeg)
 
-#### **Overview**
+**Overview**
 
 What is the dot matrix display?
 
 The 8X8 dot matrix is composed of 64 light-emitting diodes, and each light-emitting diode is placed at the intersection of the row line and the column line. When the corresponding row is set to 1 level, and a certain column is set to 0 level, the corresponding diode will light up.
 
-#### **Working Principle**
+**Working Principle**
 
 As the schematic diagram shown, to light up the LED at the first row and column, we only need to set C1 to high level and R1 to low level. To turn on LEDs at the first row, we set R1 to low level and C1-C8 to high level.
 
@@ -3632,7 +3632,7 @@ A0，A1and A2 are grounded, that is, the address is 0x70
 </tr>
 </tbody>
 </table>
-#### **Components**
+**Components**
 
 | ![image-20230424135256633](media/image-20230424135256633.png) | ![image-20230424135301078](media/image-20230424135301078.png) | ![image-20230424135303991](media/image-20230424135303991.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3642,11 +3642,11 @@ A0，A1and A2 are grounded, that is, the address is 0x70
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/7ff09d536446f1c87fcdcfb75eaf3119.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -3721,7 +3721,7 @@ while True:
 
 
 
-#### **Code Explanation**
+**Code Explanation**
 
 We need to import the dot matrix module, matrix\_fonts is the module file for all characters.
 
@@ -3735,17 +3735,17 @@ for instance **show\_char(matrix\_fonts.textFont1\['A'\]) shows A**
 
 
 
-#### **Test Result**
+**Test Result**
 
 Wire up and run the test code. The dot matrix displays "A" for one second, "B" for one second, "C" for one second, and then scroll to display the "Hello World" pattern.
 
 ![](/media/48a2ad35b392d91576eacfaa14a36e93.jpeg)
 
-### Project 37: RFID Module 
+Project 37: RFID Module 
 
 ![](/media/75003b61112e3495f213629e49f26185.jpeg)
 
-#### **Description**
+**Description**
 
 RFIDRFID-RC522 radio frequency module adopts a Philips MFRC522 original chip to design card reading circuit, easy to use and low cost, suitable for equipment development and card reader development and so on.
 
@@ -3757,7 +3757,7 @@ For example, we read the data of the IC card below: 0x8d, 0xfe, 0x6c, 0x4d, and 
 
 
 
-#### **Working Principle**
+**Working Principle**
 
 RFID (Radio Frequency Identification)
 
@@ -3767,7 +3767,7 @@ To read the data in the tag, first put it into the reading range of the card rea
 
 ![](/media/8f1b325813b0fe4f6b0fd1e6f02a9405.png)
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424135658338](media/image-20230424135658338.png) | ![image-20230424135701418](media/image-20230424135701418.png) | ![image-20230424135704378](media/image-20230424135704378.png) | ![image-20230424135707433](media/image-20230424135707433.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3777,11 +3777,11 @@ To read the data in the tag, first put it into the reading range of the card rea
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/ebdaf69914ef2018af5127f51f3b0a52.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 /* 
@@ -3822,7 +3822,7 @@ We need to import <img src="/media/2c264d707c554161702af9173ed44d76.png" style="
 
 
 
-#### **Code Explanation**
+**Code Explanation**
 
 **mfrc522\_config.py;** this is a configuration file that defines some parameters and commands.
 
@@ -3832,7 +3832,7 @@ We need to import <img src="/media/2c264d707c554161702af9173ed44d76.png" style="
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code and wire up, power on, open the shell and set the baud rate to 9600. When we make the RFID module close to the IC card and the blue key, the information read by the module will be printed out, as shown in the figure below.
 
@@ -3850,17 +3850,17 @@ The previous projects are related to single sensor or module. In the following p
 
 
 
-### Project 38: Breathing LED
+Project 38: Breathing LED
 
 ![](/media/25107e92a36e701f271b2371359f2679.jpeg)
 
-#### **Overview**
+**Overview**
 
 A“breathing LED”is a phenomenon where an LED's brightness smoothly changes from dark to bright and back to dark, continuing to do so and giving the illusion of an LED“breathing. This phenomenon is similar to a lung breathing in and out. So how to control LED’s brightness? We need to take advantage of PWM.
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424140225989](media/image-20230424140225989.png) | ![image-20230424140232783](media/image-20230424140232783.png) | ![image-20230424140235820](media/image-20230424140235820.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3870,11 +3870,11 @@ A“breathing LED”is a phenomenon where an LED's brightness smoothly changes f
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/d13028e8c6c0a663aa884d6b74a6900e.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -3905,7 +3905,7 @@ while True:
 
 
 
-#### **Code Explanation**
+**Code Explanation**
 
 The larger the set duty cycle, the brighter the LED will be, with a maximum of 65535. The duty increases from 0 to 255 at the beginning, with an increase of 1, and delay in 10 milliseconds for each time, the LED on the module will gradually become brighter.
 
@@ -3919,17 +3919,17 @@ The step length is supposed to divided by 255, for instance direction = -2 or di
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code, the LED on the module gradually gets dimmer then brighter, cyclically, like human breathe.
 
 ![](/media/36c4999e9852feffd9150d081d8c676b.jpeg)
 
-### Project 39: Button-controlled LED
+Project 39: Button-controlled LED
 
 ![](/media/50740b22d16151d490b8494b0bff4f6e.jpeg)
 
-#### **Overview**
+**Overview**
 
 In this lesson, we will make an extension experiment with a button and an LED. 
 
@@ -3937,7 +3937,7 @@ When the button is pressed and low levels are output, the LED will light up; whe
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424140526803](media/image-20230424140526803.png) | ![image-20230424140530126](media/image-20230424140530126.png) | ![image-20230424140532846](media/image-20230424140532846.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3947,11 +3947,11 @@ When the button is pressed and low levels are output, the LED will light up; whe
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/c91cc54b02a47f17fa18e8cef0dcd74b.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -3984,7 +3984,7 @@ while True:
 
 
 
-#### **Test Result**
+**Test Result**
 
 Upload the code wire up and power up with a USB cable. When the button is pressed, the LED will light up; when pressed again, the LED will go off.
 
@@ -3992,17 +3992,17 @@ Upload the code wire up and power up with a USB cable. When the button is presse
 
 
 
-### Project 40: Alarm Experiment
+Project 40: Alarm Experiment
 
 ![](/media/6db3cb7d3a91e700a3b651c1f0edb7a5.jpeg)
 
-#### **Overview**
+**Overview**
 
 In the previous experiment, we control an output module though an input module. In this lesson, we will make an experiment that the active buzzer will emit sounds once an obstacle appears.
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424140923284](media/image-20230424140923284.png) | ![image-20230424140926048](media/image-20230424140926048.png) | ![image-20230424140928800](media/image-20230424140928800.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4012,11 +4012,11 @@ In the previous experiment, we control an output module though an input module. 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/1fc50389eb7dfa837dd682e01c792f97.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4037,13 +4037,13 @@ while True:
 
 
 
-#### **Code Explanation**
+**Code Explanation**
 
 When an obstacle is detected, **sensor.value()** will return a low level signal. So when an obstacle is detected, the GP16 connected to the buzzer pin will output a high level signal, the buzzer will emit sounds.
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code. The active buzzer will emit sound if detecting obstacles; otherwise, it won’t emit sound.
 
@@ -4053,17 +4053,17 @@ Run the test code. The active buzzer will emit sound if detecting obstacles; oth
 
 
 
-### Project 41: Ultraviolet Alarm
+Project 41: Ultraviolet Alarm
 
 ![](/media/b5e3013dbf0ed402a034d365a5bb2fd5.jpeg)
 
-#### **Description**
+**Description**
 
 We can use a UV sensor to control the buzzer to achieve the effect of UV alarm.
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424141354357](media/image-20230424141354357.png) | ![image-20230424141357698](media/image-20230424141357698.png) | ![image-20230424141400626](media/image-20230424141400626.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4073,11 +4073,11 @@ We can use a UV sensor to control the buzzer to achieve the effect of UV alarm.
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/755ba4ebbd018cbb31b895039e2d7164.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4102,11 +4102,11 @@ while True:
     time.sleep(0.5)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 The code settings in the experiment are similar to the previous experiments. This time, the module we input is used as an analog sensor. By setting a threshold, the alarm exceeds the threshold. 
 
-#### **Test Result**
+**Test Result**
 
 Wire up and run the test code. When detecting ultraviolet rays through he ultraviolet sensor and reaching the strength we set, the active buzzer will emit sound
 
@@ -4116,17 +4116,17 @@ Wire up and run the test code. When detecting ultraviolet rays through he ultrav
 
 
 
-### Project 42: Intrusion Detection
+Project 42: Intrusion Detection
 
 ![](/media/b7828b9e5ee615a151567e20d35db90f.png)
 
-#### **Description**
+**Description**
 
 In this experiment, we use a PIR motion sensor to control an active buzzer to emit sounds and the onboard LED to flash rapidly.
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424141604761](media/image-20230424141604761.png) | ![image-20230424141607524](media/image-20230424141607524.png) | ![image-20230424141610308](media/image-20230424141610308.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4136,11 +4136,11 @@ In this experiment, we use a PIR motion sensor to control an active buzzer to em
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/233a63d63f3aa4fa4113b459173ecd5a.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4173,13 +4173,13 @@ while True:
     utime.sleep(2)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 **sensor\_pir.irq(trigger=machine.Pin.IRQ\_RISING, handler=pir\_handler):** low levels change into high levels. pir\_handler is the interrupt function which can make the buzzer emit and LED flash
 
 
 
-#### **Test Result**
+**Test Result**
 
 After programming, the LED flashes slowly, the detector starts to work, and the interrupt trigger mode is IRQ_RISING. 
 
@@ -4189,11 +4189,11 @@ When there is an intrusion, the output level of the PIR changes from 0 to 1, the
 
 
 
-### **Project 43: Speaker Module**
+**Project 43: Speaker Module**
 
 ![](/media/7009513ee4deade529bb95ea74dfe58e.jpeg)
 
-#### **Introduction**
+**Introduction**
 
 We learned about controlling the speaker module to make sounds, play beats and adjust its volume. In fact, each song is a combination of specific beats and tones (frequencies). In this experiment, we use this speaker module to play a song.
 
@@ -4241,7 +4241,7 @@ We will take Happy Birthday Song as an example.
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424142335003](media/image-20230424142335003.png) | ![image-20230424142337944](media/image-20230424142337944.png) | ![image-20230424142340760](media/image-20230424142340760.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4251,11 +4251,11 @@ We will take Happy Birthday Song as an example.
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/7d9dc904e51e6ce924fa7b14818254f0.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4319,21 +4319,21 @@ def playsong(mysong):
 playsong(song)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 We list frequencies of all D keys. Then list the frequencies and beats according to the musical notation. The beat we use is 500ms and can be adjusted. The corresponding beat are looped to become a song.
 
-#### **Test Result**
+**Test Result**
 
 Connect the components according to the connection diagram and run the test code, the audio power amplifier module will play a birthday song.
 
 ![](/media/6887e21a082a2edf42e3060395002f4c.jpeg)
 
-### **Project** **44: Rotary Encoder**
+**Project** **44: Rotary Encoder**
 
 ![](/media/c6b4f1cedef06ed68d1c2e5ccf5c17d2.jpeg)
 
-#### **Introduction**
+**Introduction**
 
 In this lesson, we will control the LED on the RGB module to show different colors through a rotary encoder.
 
@@ -4341,7 +4341,7 @@ When designing the code, we need to divide the obtained values by 3 to get the r
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424142705454](media/image-20230424142705454.png) | ![image-20230424142710986](media/image-20230424142710986.png) | ![image-20230424142715674](media/image-20230424142715674.png) | ![image-20230424142719866](media/image-20230424142719866.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4351,11 +4351,11 @@ When designing the code, we need to divide the obtained values by 3 to get the r
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/383625602a3c58ff87f38987cb20ca93.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4402,13 +4402,13 @@ while True:
 
 
 
-#### **Code Explanation**
+**Code Explanation**
 
 In the experiment, we set the val to the remainder of Encoder_Count divided by 3. Encoder_Count is the value of the encoder. Then we can set pin 9(red), 10(green) and 11(blue) according to remainders.
 
 Colors of LED can be controlled by remainders.
 
-#### **Test Result**
+**Test Result**
 
 Wire up, run the code and open the serial monitor. Rotate the knob of the rotary encoder to display the reminders, which can control colors of LED.
 
@@ -4418,11 +4418,11 @@ Wire up, run the code and open the serial monitor. Rotate the knob of the rotary
 
 
 
-### **Project 45: Rotary Potentiometer**
+**Project 45: Rotary Potentiometer**
 
 ![](/media/f71165ab140ae6b2aac093dc75785c96.jpeg)
 
-#### **Introduction**
+**Introduction**
 
 In the previous courses, we did experiments of breathing light and controlling LED with button. 
 
@@ -4430,7 +4430,7 @@ In this course, we do these two experiments by controlling the brightness of LED
 
 After the code is set successfully, we can control the brightness of the LED on the module by rotating the potentiometer.
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424143013860](media/image-20230424143013860.png) | ![image-20230424143016668](media/image-20230424143016668.png) | ![image-20230424143019324](media/image-20230424143019324.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4440,11 +4440,11 @@ After the code is set successfully, we can control the brightness of the LED on 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/7a22c3f5cc7105696684fa461594016e.jpeg)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4467,13 +4467,13 @@ while True:
     utime.sleep(0.1)
 ```
 
-#### **Code Explanation**
+**Code Explanation**
 
 It is easy to control the brightness of the LED light by a potentiometer. Here we can find that MicroPython unifies the value range of the ADC between 0 and 65535, and assigns values directly, which is simple and convenient. 
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code and turn the potentiometer on the module to adjust the brightness of the LED on the LED module.
 
@@ -4481,11 +4481,11 @@ Run the test code and turn the potentiometer on the module to adjust the brightn
 
 
 
-### Project 46: Smart Windows
+Project 46: Smart Windows
 
 ![](/media/fd7384d737b0393e91d42523f4d65b07.jpeg)
 
-#### **Description**
+**Description**
 
 In life, we can see all kinds of smart products, such as smart home. Smart homes include smart curtains, smart windows, smart TVs, smart lights, and more. 
 
@@ -4493,7 +4493,7 @@ In this experiment, we use a steam sensor to detect rainwater, and then achieve 
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424143352341](media/image-20230424143352341.png) | ![image-20230424143356257](media/image-20230424143356257.png) | ![image-20230424143359710](media/image-20230424143359710.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4503,11 +4503,11 @@ In this experiment, we use a steam sensor to detect rainwater, and then achieve 
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/5b7ef53f84cb0dc5bafb9b1fc6f72958.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4549,7 +4549,7 @@ We can control a servo to rotate by a threshold
 
 
 
-#### **Test Result**
+**Test Result**
 
 Wire up and run the test code. When the sensor detects a certain amount of water, the servo rotates to achieve the effect of closing or opening windows.
 
@@ -4557,11 +4557,11 @@ Wire up and run the test code. When the sensor detects a certain amount of water
 
 
 
-### **Project** **47: Sound Activated Light**
+**Project** **47: Sound Activated Light**
 
 ![](/media/f3ddb58e83a92a888d3e1d66f7456170.png)
 
-#### **Introduction**
+**Introduction**
 
 In this lesson, we will make a smart sound activated light using a sound sensor and an LED module. When we make a sound, the light will automatically turn on; when there is no sound, the lights will automatically turn off. 
 
@@ -4569,7 +4569,7 @@ How it works?
 
 The sound-controlled light is equipped with a sound sensor, and this sensor converts the intensity of external sound into a corresponding value. Then set a threshold, when the threshold is exceeded, the light will turn on, and when it is not exceeded, the light will go out.
 
-#### **Components**
+**Components**
 
 | ![image-20230424144238571](media/image-20230424144238571.png) | ![image-20230424144247239](media/image-20230424144247239.png) | ![image-20230424144308720](media/image-20230424144308720.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4579,11 +4579,11 @@ The sound-controlled light is equipped with a sound sensor, and this sensor conv
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/596547cf8d0b9124d6a38bed32b87487.jpeg)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4616,7 +4616,7 @@ We set the analog threshold value to 5000. If more than 5000, LED will be on 3s;
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code, the shell monitor displays the corresponding volume value. When the analog value of sound is greater than 5000, the LED on the LED module will light up, otherwise it will go off.
 
@@ -4626,15 +4626,15 @@ Run the test code, the shell monitor displays the corresponding volume value. Wh
 
 
 
-### Project 48: Fire Alarm
+Project 48: Fire Alarm
 
 ![](/media/e6971103aaa858036b51f3165e0ccb32.jpeg)
 
-#### **Description**
+**Description**
 
 In this experiment, we will make a fire alarm system. Just use a flame sensor to control an active buzzer to emit sounds.
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424144954095](media/image-20230424144954095.png) | ![image-20230424144958422](media/image-20230424144958422.png) | ![image-20230424145001781](media/image-20230424145001781.png) | ![image-20230424145004678](media/image-20230424145004678.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4644,11 +4644,11 @@ In this experiment, we will make a fire alarm system. Just use a flame sensor to
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/949b1d4ea2ce2839c0327456dc803230.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4679,23 +4679,23 @@ This flame sensor uses an analog pin and a digital pin. When a flame is detected
 
 
 
-#### **Test Result**
+**Test Result**
 
 Wire up, run the test code and power on. The sensor detects the flame, and the external active buzzer will emit sounds, otherwise the active buzzer will not emit sounds.
 
 ![](/media/5e65c74f7e8df9e95e743036381bac47.jpeg)
 
-### Project 49: Smoke Alarm
+Project 49: Smoke Alarm
 
 ![](/media/a1f72c7aa7fd3609401a1f1176b426ec.jpeg)
 
-#### **Description**
+**Description**
 
 In this experiment, we will make a smoke alarm by a TM16504-Digit segment module, a gas sensor and an active buzzer.
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424145856276](media/image-20230424145856276.png) | ![image-20230424145859275](media/image-20230424145859275.png) | ![image-20230424145902043](media/image-20230424145902043.png) | ![image-20230424145904731](media/image-20230424145904731.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4705,11 +4705,11 @@ In this experiment, we will make a smoke alarm by a TM16504-Digit segment module
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/6a3162e64cbf27036ef9df7364466c83.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4905,7 +4905,7 @@ Define an integer variable val to store the analog value of the smoke sensor, an
 
 
 
-#### **Test Result**
+**Test Result**
 
 Run the test code, wire up and power on. When the concentration of combustible gas exceeds the standard, the active buzzer module will give an alarm, and the four-digit digital tube will display the concentration value.
 
@@ -4913,15 +4913,15 @@ Run the test code, wire up and power on. When the concentration of combustible g
 
 
 
-### Project 50: 6812 Colorful LED
+Project 50: 6812 Colorful LED
 
 ![](/media/33c9dd3932993a801689ce26543d76bd.png)
 
-#### **Description**
+**Description**
 
 We learned how to use the 6812 RGB module, we knew that this module can light up each LED through a pin. In this experiment, we will control the RGB module to display different colors. (Note: do not look directly at the LED for a long time to avoid damage to our eyes.)
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424150229123](media/image-20230424150229123.png) | ![image-20230424150234718](media/image-20230424150234718.png) | ![image-20230424150245951](media/image-20230424150245951.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -4931,11 +4931,11 @@ We learned how to use the 6812 RGB module, we knew that this module can light up
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/a91e603228402e2e94b4a595897da842.jpeg)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -4979,7 +4979,7 @@ sm.active(1)
 # Display a pattern on the LEDs via an array of LED RGB values.
 ar = array.array("I", [0 for _ in range(NUM_LEDS)])
 
-##########################################################################
+
 def pixels_show():
     dimmer_ar = array.array("I", [0 for _ in range(NUM_LEDS)])
     for i,c in enumerate(ar):
@@ -5042,17 +5042,17 @@ rainbow_cycle(0)
 
 
 
-#### **Test Result**
+**Test Result**
 
 Wire up, run the test code. Then the four lamp beads will display flowing lights, showing black, red, yellow, green, blue, blue, purple and white and  a rainbow light effect. 
 
 ![](/media/edf1b4bd96e8dc5857d193c2ed109557.jpeg)
 
-### **Project 51: Ultrasonic Sensor**
+**Project 51: Ultrasonic Sensor**
 
 ![](/media/19a7c30e24f0ec39da94912c5535b791.png)
 
-#### **Description**
+**Description**
 
 ![](/media/38037219a4908755dbedc422be1ab61b.jpeg)
 
@@ -5064,7 +5064,7 @@ In this experiment, we will use a speaker module, an RGB module and a 4-digit tu
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424150559731](media/image-20230424150559731.png) | ![image-20230424150602992](media/image-20230424150602992.png) | ![image-20230424150606096](media/image-20230424150606096.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -5076,11 +5076,11 @@ In this experiment, we will use a speaker module, an RGB module and a 4-digit tu
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/db145113660a57a8035372f321eb8412.jpeg)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -5324,7 +5324,7 @@ We can adjust the distance range in the code.
 
 
 
-#### **Test Result**
+**Test Result**
 
 Wire up according to the connection diagram upload the run the code and power up. 
 
@@ -5332,11 +5332,11 @@ When the ultrasonic sensor detects different distances, the buzzer will produce 
 
 ![](/media/1f3599fe54a1f53bf6eae6eab27c600d.jpeg)
 
-### **Project 52: IR Remote Control**
+**Project 52: IR Remote Control**
 
 ![](/media/6e823de7db355fde0bc5fcb7c1cdc705.jpeg)
 
-#### **Introduction**
+**Introduction**
 
 In the previous experiments, we learned to turn on or turn off the LED, adjust the brightness of a light through PWM, and how to use the infrared receiver module. So in this experiment, we use an infrared remote control to control an LED module.
 
@@ -5344,7 +5344,7 @@ When we receive a value, we set the PWM value by the corresponding button value,
 
 
 
-#### **Components**
+**Components**
 
 | ![image-20230424151006733](media/image-20230424151006733.png) | ![image-20230424151012274](media/image-20230424151012274.png) | ![image-20230424151017110](media/image-20230424151017110.png) | ![image-20230424151024066](media/image-20230424151024066.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -5354,11 +5354,11 @@ When we receive a value, we set the PWM value by the corresponding button value,
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/3151c2409f0d69871f3b23237ac1014c.jpeg)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -5448,7 +5448,7 @@ When the flag is true (true), the LED is turned on, and when it is false (false)
 
 
 
-#### **Test Result**
+**Test Result**
 
 Wire up, upload the test code and open the Shell monitor. Press the OK button of the remote, the LED will be on; press it again, the LED will be off.
 
@@ -5458,11 +5458,11 @@ Wire up, upload the test code and open the Shell monitor. Press the OK button of
 
 
 
-### Project 53: Heat Dissipation Device
+Project 53: Heat Dissipation Device
 
 ![](/media/24a7a2d97a50c2f3fc4ab893d3aee394.jpeg)
 
-#### **Description**
+**Description**
 
 We will use a temperature sensor and some modules to make a smart cooling device in this experiment. 
 
@@ -5470,7 +5470,7 @@ When the ambient temperature is higher than a certain value, the motor is turned
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424151353385](media/image-20230424151353385.png) | ![image-20230424151358997](media/image-20230424151358997.png) | ![image-20230424151407701](media/image-20230424151407701.png) | ![image-20230424151410772](media/image-20230424151410772.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -5480,11 +5480,11 @@ When the ambient temperature is higher than a certain value, the motor is turned
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/3bd1268a47335659a58b4e6ad4ff4a06.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -5691,7 +5691,7 @@ The setting of variables and the storage of detection values are the same as wha
 
 
 
-#### **Test Result**
+**Test Result**
 
 Wire up and run the test code. We can see the temperature of the current environment (unit is Celsius) on the four-digit segment display, as shown in the figure below. If this value exceeds the value we set, the fan will rotate to dissipate heat.
 
@@ -5699,11 +5699,11 @@ Wire up and run the test code. We can see the temperature of the current environ
 
 
 
-### Project 54: Intelligent Entrance Guard System
+Project 54: Intelligent Entrance Guard System
 
 ![](/media/6dbae618241cc2dd3060dc4abf94f3a6.jpeg)
 
-#### **Description**
+**Description**
 
 In this project, we use the RFID522 card swiping module and the servo to set up an intelligent access control system. The principle is very simple.
 
@@ -5711,7 +5711,7 @@ We use RFID522 swipe card module, an IC card or key card to unlock.
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424151725231](media/image-20230424151725231.png) | ![image-20230424151728342](media/image-20230424151728342.png) | ![image-20230424151731511](media/image-20230424151731511.png) | ![image-20230424151734389](media/image-20230424151734389.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -5721,11 +5721,11 @@ We use RFID522 swipe card module, an IC card or key card to unlock.
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/767a8adc302e88943bd4bd9a07b91895.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 /* 
@@ -5779,7 +5779,7 @@ In the previous experiment, our card swipe module has tested the information of 
 
 
 
-#### **Test Result**
+**Test Result**
 
 Upload the test code, wire up and power up with a USB cable, open the shell and set the baud rate to 9600; the shell displays information. 
 
@@ -5789,11 +5789,11 @@ When we use the IC card or blue key to swipe the card, the shell displays the ca
 
 ![](/media/7fd1aee41722b5964252dff0b64b524d.png)
 
-### **Project 55: Comprehensive Experiment**
+**Project 55: Comprehensive Experiment**
 
 ![](/media/c92bfcbd1ecd7fe91198066d0c9a4df6.jpeg)
 
-#### **Introduction**
+**Introduction**
 
 We did a lot of experiments, and for each one we needed to re-upload the code, so can we achieve different functions through an experiment? 
 
@@ -5801,7 +5801,7 @@ In this experiment, we will use an external button module to achieve different f
 
 
 
-#### **Required Components**
+**Required Components**
 
 | ![image-20230424152052635](media/image-20230424152052635.png) | ![image-20230424152055432](media/image-20230424152055432.png) | ![image-20230424152059912](media/image-20230424152059912.png) | ![image-20230424152102873](media/image-20230424152102873.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -5815,11 +5815,11 @@ In this experiment, we will use an external button module to achieve different f
 
 
 
-#### **Connection Diagram**
+**Connection Diagram**
 
 ![](/media/5e3af4c36387b89028e82e4a0b949c01.png)
 
-#### **Test Code**
+**Test Code**
 
 ```python
 '''
@@ -6013,7 +6013,7 @@ while True:
 
 
 
-#### **Code Explanation**
+**Code Explanation**
 
 Calculate how many times the button is pressed, divide it by 7, and get the remainder which is 0, 1 2, 3, 4, 5 and 6. According to different remainders, construct seven unique functions to control the experiment and realize different functions.
 
@@ -6021,7 +6021,7 @@ Calculate how many times the button is pressed, divide it by 7, and get the rema
 
 
 
-#### **Test Result**
+**Test Result**
 
 Connect the wires according to the wiring diagram, use the USB to power on, and run the test code. At the beginning, the number of keys is 0, the remainder is 0, and the four lamp beads on the RGB module flash with random colors.
 
