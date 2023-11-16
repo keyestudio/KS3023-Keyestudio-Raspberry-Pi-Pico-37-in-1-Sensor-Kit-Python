@@ -5,9 +5,9 @@
 
    
    home.md
-   1.C_Tutorial\C.md
-   2.MicroPython_Tutorial(Windows)\MicroPython
-   3.MicroPython_Tutorial(Raspberry-Pi)\MicroPython
+   C/C.md
+   MicroPython_Windows/MicroPython
+   MicroPython_Raspberry-Pi/MicroPython
 
 
 
