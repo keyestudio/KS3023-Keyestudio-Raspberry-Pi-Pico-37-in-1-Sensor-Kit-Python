@@ -2027,7 +2027,7 @@ Upload the test code, open the serial monitor and set baud rate to 9600. When we
 
 ![](./media/3d9014d35452e008d710d3c8d10feb43-1697687761170-278-1697694835651-202.png)
 
-### **Project 27: SK6812 RGB Module**
+### Project 27: SK6812 RGB Module
 
 ![](./media/effda831f7c06cea2c443d8352f1a693-1697687761170-279-1697694835651-203.jpeg)
 
@@ -3411,7 +3411,7 @@ Upload the test code wire up and power on. if the sensor detects people moving, 
 
 ![](./media/1cf0e463659a9c45c5130180071cedc5-1697687761175-443-1697694835655-290.jpeg)
 
-### **Project 43: Speaker Module**
+### Project 43: Speaker Module
 
 ![](./media/7009513ee4deade529bb95ea74dfe58e-1697687761175-444-1697694835655-291.jpeg)
 
@@ -3524,7 +3524,7 @@ Connect the components according to the connection diagram and run the test code
 
 ![](./media/6887e21a082a2edf42e3060395002f4c-1697687761175-454-1697694835655-296.jpeg)
 
-### **Project** **44: Rotary Encoder**
+### Project 44: Rotary Encoder
 
 ![](./media/c6b4f1cedef06ed68d1c2e5ccf5c17d2-1697687761175-455-1697694835655-297.jpeg)
 
@@ -3763,7 +3763,7 @@ Wire up and run the test code. When the sensor detects a certain amount of water
 
 ![](./media/d9aa58963d4cad639b9b77adb718446c-1697687761176-483-1697694835655-306.jpeg)
 
-### **Project** **47: Sound Activated Light**
+### Project 47: Sound Activated Light
 
 ![](./media/f3ddb58e83a92a888d3e1d66f7456170-1697687761176-484-1697694835655-307.png)
 
@@ -3945,7 +3945,7 @@ Run the test code, wire up and power on. When the concentration of combustible g
 
 ![](./media/1faab116c722135abb1af911f07bb04e-1697687761178-512-1697694835656-323.jpeg)
 
-### **Project 50: 6812 RGB Module**
+### Project 50: 6812 RGB Module
 
 ![](./media/33c9dd3932993a801689ce26543d76bd-1697687761178-513-1697694835656-324.png)
 
