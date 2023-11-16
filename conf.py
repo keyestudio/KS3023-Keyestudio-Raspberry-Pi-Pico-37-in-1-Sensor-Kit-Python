@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'KS3023 Keyestudio Raspberry Pi Pico 37 in 1 Sensor Kit Python'
+project = 'Pico Sensor Kit '
 copyright = 'keyestudio , WiKi'
 author = 'keyestudio WiKi'
 
