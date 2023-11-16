@@ -1,10 +1,12 @@
-## <span style="color: rgb(255, 76, 65);">Resources</span>
 
-Download code, libraries and more details, please refer to the following link: [https://fs.keyestudio.com/KS3023](https://fs.keyestudio.com/KS3023)
 
 # **Keyestudio Raspberry Pi Pico 37 in 1 Sensor Kit**
 
 ![](./media/image-20230424082238631.png)
+
+## <span style="color: rgb(255, 76, 65);">Resources</span>
+
+Download code, libraries and more details, please refer to the following link: [https://fs.keyestudio.com/KS3023](https://fs.keyestudio.com/KS3023)
 
 ## 1. Description
 
@@ -148,15 +150,4 @@ Raspberry Pi did release a ton of technical documentation, plus a great guide ca
 For more information, please refer to:
 
 https://www.raspberrypi.com/products/raspberry-pi-pico/
-
-
-## 4. Tutorials
-
-* [1.C_Tutorial(Windows)](1.C_Tutorial(Windows)/C_Tutorial(Windows).md)
-
-* [2.MicroPython_Tutorial(Windows)](2.MicroPython_Tutorial(Windows)/MicroPython_Tutorial(Windows).md)
-
-* [3.MicroPython_Tutorial(Raspberry-Pi)](3.MicroPython_Tutorial(Raspberry-Pi)/MicroPython_Tutorial(Raspberry-Pi).md)
-
-
 
